@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        a {
+            color: green;
+        }
+
+        a:hover {
+            color: red;
+        }
+
+        .border a {
+            border-right: solid red 3px;
+            padding: 10px;
+        }
+
+        .border a:last-child {
+            border: none
+        }
+
+        .border {
+            margin-top: 20px;
+        }
+
+        .table {
+            margin-top: 40px;
+        }
+
+        .table td {
+            padding: 10px;
+            border-color: white red white white;
+            border-right-width: 3px;
+        }
+
+        .table td:last-child {
+            border-right-color: white;
+            border-right-width: 1px;
+        }
+    </style>
+    <div class="border">
+        <a href="http://css.yoksel.ru/specifity/" target="_blank">первая ссылка</a>
+        <a href="https://eda.ru/?ysclid=lmhjtcz661455804842" target="_blank">вторая ссылка</a>
+        <a href="https://www.sports.ru/?ysclid=lmhjusmyn2393419306" target="_blank">третья ссылка</a>
+        <a href="https://cybersport.ru/?ysclid=lmhjviwama922652654" target="_blank">четвертая ссылка</a>
+        <a href="https://ria.ru/world/?ysclid=lmhk1zswly500562975" target="_blank">пятая ссылка</a>
+    </div>
+
+
+    <div class="table">
+        <table border="1" style="border-collapse: collapse;">
+            <tr>
+                <td><a href="http://css.yoksel.ru/specifity/" target="_blank">первая ссылка</a></td>
+                <td><a href="https://eda.ru/?ysclid=lmhjtcz661455804842" target="_blank">вторая ссылка</a></td>
+                <td><a href="https://www.sports.ru/?ysclid=lmhjusmyn2393419306" target="_blank">третья ссылка</a></td>
+                <td><a href="https://cybersport.ru/?ysclid=lmhjviwama922652654" target="_blank">четвертая ссылка</a>
+                </td>
+                <td><a href="https://ria.ru/world/?ysclid=lmhk1zswly500562975" target="_blank">пятая ссылка</a></td>
+            </tr>
+        </table>
+    </div>
+</body>
+
+</html>

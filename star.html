@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+    .stars {
+        display: block;
+        position: relative;
+        width: fit-content;
+    }
+    .stars-item {
+        display: inline-block;
+        width: 78px;
+        height: 78px;
+        background-image: url(star0.png);
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    .stars:hover > .stars-item {
+        background-image: url(star1.png);
+    }
+    .stars-item:hover ~ .stars-item {
+        background-image: url(star0.png);
+    }
+    </style>
+    <div class="stars">
+        <div class="stars-item"></div>
+        <div class="stars-item"></div>
+        <div class="stars-item"></div>
+        <div class="stars-item"></div>
+        <div class="stars-item"></div>
+      </div>
+</body>
+</html>
