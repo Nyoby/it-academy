@@ -9,11 +9,35 @@
 </head>
 
 <body>
+    <style>
+        .content {margin-left: 15%;
+            background: url('ball.png') repeat-y right;
+
+        }
+        .menu{float: left;
+            width: 15%; 
+            background-color: yellow;"
+        }
+        @media screen and (max-width: 800px) {
+            .content{margin-left: 15%;
+            background-image: none;}
+        }
+        @media screen and (max-width: 700px) {
+            img{
+                width: 100%;
+            }
+        }
+        @media screen and (max-width: 360px) {
+            .menu {
+                width: 100%;
+            }
+        }
+    </style>
     <div style="float: top; text-align: center; background-color: aqua; width: 100%; padding: 30px;">
         <span style="color: blue;">ПРИВЕТ УЧАСТНИКАМ
             СОРЕВНОВАНИЙ!</span>
     </div>
-    <div style="float: left; width: 15%; background-color: yellow;">
+    <div class="menu">
         <h1>Виды спорта</h1>
         <ol style="list-style-type: disc;">
             <li><a href="https://ru.wikipedia.org/wiki/%D0%9A%D0%BE%D0%BD%D1%8C%D0%BA%D0%BE%D0%B1%D0%B5%D0%B6%D0%BD%D1%8B%D0%B9_%D1%81%D0%BF%D0%BE%D1%80%D1%82"
@@ -30,7 +54,7 @@
         </ol>
 
     </div>
-    <div style="margin-left: 15%; background: url('ball.png') repeat-y right;">
+    <div class="content">
         <h2 style="text-align: center; font-size: 100px;"> Футбол</h2>
         <img src="team.png" style="float: left;">
         <p style="white-space: pre-wrap; font-size: xx-large;">Футбол&#8213;командный вид спорта,в котором целью
