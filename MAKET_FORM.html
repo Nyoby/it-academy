@@ -7,9 +7,12 @@
     <title>Document</title>
     <style>
         .container {
-            position: relative;
-            margin: 1 1 1 1;
-            padding: 1 1 1 1;
+           position: relative;
+            
+        }
+        .title{
+            float: right; 
+            width: 89%;
         }
 
         .name {
@@ -17,13 +20,14 @@
         }
 
         .text {
-            width: 100%;
+            width: 99%;
+        
         }
         .where{
             display: inline-block;
         }
         .name{
-            display: inline-block; 
+            float: right;
             width: 10%;
         }
         @media screen and (max-width: 900px){
@@ -34,7 +38,12 @@
         }
         @media  and (max-width: 1200px) {
             .name{
-                width:40px;
+                width: 40px;
+              
+            }
+            .container.title {
+                width: 100%;
+                
             }
         }
 
@@ -45,11 +54,11 @@
     <div class="container">
         <form method="post" action="https://fe.it-academy.by/TestForm.php">
             Для публикации вашей статьи заполните, пожалуйста, следующую форму:<br>
-            <div>
+            <divS>
                 <label for="title" name="name">
                 Название статьи:
                 </label>
-                <input id="titile" name="title" style="display: inline-block; width: 89%;">
+                <input  type="text" class="title">
                 </div><br>
             <div>
                 <label>
@@ -63,12 +72,11 @@
             </div>
             <br>
             <div class="where">
-            <label>
-                Публикация:
-                <input type="radio" name="where" value="1" checked>на сайте
-                <input type="radio" name="where" value="2">в журнале
-                <input type="radio" name="where" value="3">на сайте и в журнале
-            </label></div>
+                <label>Публикация:</label>
+                <label><input type="radio" name="where" value="1" checked>на сайте</label>
+                <label><input type="radio" name="where" value="2">в журнале</label>
+                <label><input type="radio" name="where" value="3">на сайте и в журнале</label>
+            </div>
             <br>
             <div>
                 <label>
@@ -76,7 +84,7 @@
                 </label>
             <input type="checkbox" name="accept" value="yes" checked>
         </div><br>
-            <div><label>Текст статьи:</label><br>
+            <div style="padding-right: 0px;"><label>Текст статьи:</label><br>
             <textarea name="text" class="text"></textarea><br>
             <input type="submit" value="Опубликовать">
         </div>
