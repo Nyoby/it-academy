@@ -1,0 +1,115 @@
+<!-- Не понял как сделать чтобы когда навидишь на общий блок 2 элемента анимировались сразу -->
+
+<!DOCTYPE html>           
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            width: 800px;
+            height: 500px;
+            border: solid red 2px;
+            background-color: gold;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+
+        .ex1 {
+            position: relative;
+            width: 100px;
+            height: 100px;
+            float: left;
+        }
+
+        .polygon:hover {
+            animation: Anim1 3s infinite;
+        }
+
+        @keyframes Anim1 {
+            from {
+                fill: black;
+                stroke: green;
+                stroke-width: 20;
+            }
+
+            to {
+                fill: whitesmoke;
+                stroke: hotpink;
+                stroke-width: 50;
+            }
+        }
+
+        .ex2 {
+            position: relative;
+            width: 100px;
+            height: 100px;
+        }
+
+        .circle {
+            animation: Anim2 2s infinite;
+        }
+
+        @keyframes Anim2 {
+            from {
+                stroke-width: 10;
+            }
+
+            to {
+                stroke-width: 2;
+            }
+        }
+
+        .ex3 {
+            position: relative;
+            width: 100px;
+            height: 100px;
+        }
+
+        .ellipse:hover {
+            animation: Anim3 3s infinite;
+        }
+
+        @keyframes Anim3 {
+            from {
+                stroke: blue;
+                ry: 34;
+                rx: 245
+            }
+
+            to {
+                stroke: aquamarine;
+                ry: 350;
+                rx: 390
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="ex1">
+            <svg viewBox="0 0 800 800" xmlns="http://www.w3.org/2000/svg">
+                <polygon class="polygon" points="409,732 223,603 532,400" fill="black" stroke="green"
+                    stroke-width="20" />
+            </svg>
+        </div>
+        <div class="ex2">
+            <svg xmlns="http://www.w3.org/2000/svg">
+                <circle class="circle" r="37" cx="50" cy="50" fill="purple" stroke="#41B82E" stroke-width="10" />
+            </svg>
+        </div>
+        <div class="ex3">
+            <svg viewBox="0 0 800 800" xmlns="http://www.w3.org/2000/svg">
+                <ellipse class="ellipse" rx="245" ry="34" cx="400" cy="400" fill="#DB7092" stroke="blue"
+                    stroke-width="10" />
+            </svg>
+        </div>
+    </div>
+
+</body>
+
+</html>
