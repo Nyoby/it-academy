@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>example maket</title>
+    <style>
+        html,
+        body {
+            box-sizing: border-box;
+            margin: 0 auto;
+
+        }
+
+        ul,
+        li {
+            margin: 0;
+            padding: 0;
+        }
+
+        nav {
+            width: 100%;
+        }
+
+        .name {
+            display: flex;
+            justify-content: space-between;
+            padding-top: 40px;
+        }
+
+        .name p {
+            display: inline-block;
+            margin: 0;
+        }
+
+        .name_text {
+            color: var(--Black, #070707);
+            font-size: 47.339px;
+            margin: 0;
+        }
+
+        .name_descr {
+            color: var(--Black, #070707);
+            font-size: 18px;
+            align-self: flex-end;
+            margin: 0;
+        }
+
+        .name_lng {
+            color: #828282;
+            font-size: 16px;
+            align-self: flex-end;
+            transform: rotate(-90deg) translate(25px, 25px);
+            margin: 0;
+            padding: 0;
+        }
+
+        .header_buttons {
+            list-style-type: none;
+            display: flex;
+            justify-content: space-between;
+            flex-direction: row;
+        }
+
+        .container {
+            width: 980px;
+            margin: 0 auto;
+        }
+
+        .header_buttons .link {
+            color: #828282;
+            font-size: 18px;
+            font-style: normal;
+            line-height: normal;
+            text-decoration: none;
+        }
+
+        .header {
+            border-bottom: 1px solid #828282;
+            height: 88px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .photo {
+            margin-top: 40px;
+            margin-bottom: 185px;
+        }
+
+        .about_me {
+            background-color: #F6F6F6;
+            text-align: center;
+            padding-top: 120px;
+            padding-bottom: 120px;
+            margin-bottom: 91px;
+        }
+
+        .about_me--title {
+            color: var(--Black, #070707);
+            text-align: center;
+            font-family: Gilroy-Bold;
+            font-size: 34px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+        }
+
+        .about_me--descr {
+            color: var(--Black, #070707);
+            text-align: center;
+            font-family: Gilroy-Medium;
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+        }
+
+        .skills--title {
+            font-size: 34px;
+            text-align: center;
+            margin-top: 91px;
+        }
+
+        .skills--text {
+            font-size: 18px;
+            padding-top: 70px;
+            padding-bottom: 84px;
+            text-align: center;
+        }
+
+        .ico {
+            width: 89px;
+            height: 88px;
+        }
+
+        .stars {
+            width: 166px;
+            height: 26px;
+        }
+
+        .skills-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 110px;
+        }
+
+        .items {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .skills-item p {
+            color: #828282;
+            font-size: 14px;
+        }
+
+        .portfolio {
+            background-color: #F6F6F6;
+        }
+
+        .portfolio--title {
+            padding-top: 113px;
+            padding-bottom: 47px;
+            text-align: center;
+            font-size: 34px;
+        }
+
+        .portfolio--photo {
+            padding-bottom: 45px;
+        }
+
+        .portfolio--href {
+            text-decoration: none;
+            font-size: 18px;
+            color: #878787;
+            display: block;
+            text-align: center;
+            padding-bottom: 100px;
+        }
+
+        .contacts {
+            font-size: 34px;
+            text-align: center;
+            padding-top: 100px;
+            padding-bottom: 20px;
+        }
+
+        .contacts--text {
+            font-size: 18px;
+            text-align: center;
+            padding-bottom: 30px;
+        }
+
+        .button {
+            width: 166px;
+            height: 38px;
+            display: block;
+            border-radius: 15px;
+            text-decoration: none;
+            background: black;
+            color: white;
+            text-align: center;
+            line-height: 38px;
+            margin: 0 auto;
+            padding-bottom: 20px;
+            margin-bottom: 90px;
+        }
+
+        .footer {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .contacts--img {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            width: 300px;
+            margin: 0 auto;
+            margin-bottom: 30px;
+        }
+
+        .img {
+            width: 35px;
+            height: 35px;
+        }
+
+        .contacts--end {
+            color: #828282;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        .burger {
+
+            margin: 0;
+            padding: 0;
+            background: #232323;
+            color: #cdcdcd;
+            font-family: "Avenir Next", "Avenir", sans-serif;
+            display: none;
+        }
+
+        #menuToggle {
+            display: block;
+            position: relative;
+            top: 50px;
+            left: 50px;
+
+            z-index: 1;
+
+            -webkit-user-select: none;
+            user-select: none;
+        }
+
+        #menuToggle a {
+            text-decoration: none;
+            color: #232323;
+
+            transition: color 0.3s ease;
+        }
+
+        #menuToggle a:hover {
+            color: tomato;
+        }
+
+
+        #menuToggle input {
+            display: block;
+            width: 40px;
+            height: 32px;
+            position: absolute;
+            top: -7px;
+            left: -5px;
+
+            cursor: pointer;
+
+            opacity: 0;
+            z-index: 2;
+
+            -webkit-touch-callout: none;
+        }
+
+        #menuToggle span {
+            display: block;
+            width: 33px;
+            height: 4px;
+            margin-bottom: 5px;
+            position: relative;
+
+            background: #cdcdcd;
+            border-radius: 3px;
+
+            z-index: 1;
+
+            transform-origin: 4px 0px;
+
+            transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
+                background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
+                opacity 0.55s ease;
+        }
+
+        #menuToggle span:first-child {
+            transform-origin: 0% 0%;
+        }
+
+        #menuToggle span:nth-last-child(2) {
+            transform-origin: 0% 100%;
+        }
+
+        #menuToggle input:checked~span {
+            opacity: 1;
+            transform: rotate(45deg) translate(-2px, -1px);
+            background: #232323;
+        }
+
+        #menuToggle input:checked~span:nth-last-child(3) {
+            opacity: 0;
+            transform: rotate(0deg) scale(0.2, 0.2);
+        }
+
+        #menuToggle input:checked~span:nth-last-child(2) {
+            transform: rotate(-45deg) translate(0, -1px);
+        }
+
+        #menu {
+            position: absolute;
+            width: 300px;
+            margin: -100px 0 0 -50px;
+            padding: 50px;
+            padding-top: 125px;
+
+            background: #ededed;
+            list-style-type: none;
+            -webkit-font-smoothing: antialiased;
+            transform-origin: 0% 0%;
+            transform: translate(-100%, 0);
+            transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+        }
+
+        #menu li {
+            padding: 10px 0;
+            font-size: 22px;
+        }
+
+        #menuToggle input:checked~ul {
+            transform: none;
+        }
+
+        @media screen and (max-width:480px) {
+            .burger {
+                display: block;
+                margin-left: -40px;
+            }
+
+            /* .header {
+                margin-top: 50px;
+            }
+        }
+
+        @media screen and (max-width:400px) { */
+            .header {
+                display: none;
+            }
+
+            .name {
+                justify-content: left;
+                flex-direction: column;
+            }
+
+            .name_descr {
+                align-self: flex-start;
+                padding-top: 30px;
+            }
+
+            .container {
+                width: 100%;
+            }
+
+            .items {
+                justify-content: flex-start;
+                flex-direction: column;
+            }
+
+            .burger {
+                margin-bottom: 15px;
+            }
+
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="burger">
+            <nav role="navigation">
+                <div id="menuToggle">
+                    <input type="checkbox">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <ul id="menu">
+                        <a href="#">
+                            <li>Home</li>
+                        </a>
+                        <a href="#">
+                            <li>About</li>
+                        </a>
+                        <a href="#">
+                            <li>Info</li>
+                        </a>
+                        <a href="#">
+                            <li>Contact</li>
+                        </a>
+                        <a href="https://erikterwan.com/" target="_blank">
+                            <li>Show me more</li>
+                        </a>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <div class="header">
+            <nav>
+                <ul class="header_buttons">
+                    <li><a href="index.html" class="link">Home</a></li>
+                    <li><a href="index.html" class="link">About me</a></li>
+                    <li><a href="index.html" class="link">Skills</a></li>
+                    <li><a href="index.html" class="link">Portfolio</a></li>
+                    <li><a href="index.html" class="link">Contacts</a></li>
+                </ul>
+            </nav>
+        </div>
+        <section class="container">
+            <div class="name">
+                <p class="name_text">Denis<br>Novikov</p>
+                <p class="name_descr">UX | UJ designer<br>24 years old,Minsk</p>
+                <p class="name_lng">RU | ENG</p>
+            </div>
+        </section>
+        <section class="container">
+            <div class="photo">
+                <picture>
+                    <source media="(max-width: 300px)" srcset="BSPP2266.jpg" class="photo--img">
+                    <img src="BSPP2266.png" alt="фото дениса">
+                </picture>
+            </div>
+        </section>
+        <section>
+            <div class="about_me">
+                <h2 class="about_me--title">About me</h2><br>
+                <p class="about_me--descr"> Hi, I'm Denis – UX/UI designer from Minsk.<br>
+                    I'm interested in design and everything connected with it.<br><br><br>
+
+                    I'm studying at courses "Web and mobile design<br>
+                    interfaces" in IT-Academy.<br><br><br>
+
+                    Ready to implement excellent projects<br>
+                    with wonderful people.</p>
+                </p>
+            </div>
+        </section>
+        <section class="container">
+            <div class="skills">
+                <h2 class="skills--title">Skills</h2>
+                <p class="skills--text">I work in such programs as</p>
+            </div>
+            <div class="items">
+                <div class="skills-item">
+                    <img src="Group.png" alt="Иконка Photoshop" class="ico">
+                    <p>Abode Photoshop</p>
+                    <img src="stars_4.png" alt=" Четыре звезды" class="stars">
+                </div>
+
+                <div class="skills-item">
+                    <img src="Group (1).png" alt="Иконка Illustrator" class="ico">
+                    <p>Abode Photoshop</p>
+                    <img src="stars_3.png" alt=" Три звезды" class="stars">
+                </div>
+
+                <div class="skills-item">
+                    <img src="Group (2).png" alt="Иконка After effects" class="ico">
+                    <p>Abode Photoshop</p>
+                    <img src="stars_4.png" alt=" Четыре звезды" class="stars">
+                </div>
+
+                <div class="skills-item">
+                    <img src="Frame.png" alt="Иконка Figma" class="ico">
+                    <p>Abode Photoshop</p>
+                    <img src="stars_4.png" alt=" Четыре звезды" class="stars">
+                </div>
+            </div>
+        </section>
+        <section class="portfolio">
+            <div class="container">
+                <div>
+                    <p class="portfolio--title">Portfolio</p>
+                    <img src="Слой 8.png" alt="Фото примера" class="portfolio--photo">
+                    <a href="#" alt="ссылка на пример" class="portfolio--href">Online fashion&#8211;Homepage</a>
+                </div>
+                <div>
+                    <img src="reebok_web.png" alt="Фото примера" class="portfolio--photo">
+                    <a href="#" alt="ссылка на пример" class="portfolio--href">Reebok Store&#8211;Concept</a>
+                </div>
+                <div>
+                    <img src="reebok_web (1).png" alt="Фото примера" class="portfolio--photo">
+                    <a href="#" alt="ссылка на пример" class="portfolio--href">Braun Landing Page&#8211;Concept</a>
+                </div>
+            </div>
+        </section>
+        <footer class="footer">
+            <div>
+                <p class="contacts">Contacts</p>
+                <p class="contacts--text">Want to know more or just chat? <br>You are welcome!</p>
+                <a href="#" class="button">Send message</a>
+            </div>
+            <div class="contacts--img">
+                <img src="in.png" alt="in" class="img">
+                <img src="surface1 6.png" alt="surface" class="img">
+                <img src="behance.png" alt="behance" class="img">
+                <img src="surface1 7.png" alt="surface" class="img">
+            </div>
+            <div>
+                <p class="contacts--end">Like me on <br>LinkedIn, Instagram, Behance, Dribble</p>
+            </div>
+
+    </div>
+    </footer>
+
+    </div>
+
+</body>
+
+</html>
